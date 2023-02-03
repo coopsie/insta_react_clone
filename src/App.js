@@ -14,6 +14,7 @@ function App() {
   
   const fetchImages = async () => {
     const response = await fetch ("https://picsum.photos/v2/list");
+    console.log(response)
     const data = await response.json();
     console.log(data);
     setPhotos(data);
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <div className="App">
+
       <Login setter={setUser}/>
       <h1>{user} is logged in</h1>
 
@@ -38,17 +40,6 @@ function App() {
     }
 
       <br></br>
-      {/* <input onChange = {(event) => setUser(event.target.value)} />
-      {user && <Box name={user}/>}
-      {(user == "Harry") ? <Box name="Harry logged in" /> : <Box name="please log in"/>} */}
-
-      {/* {myArray.map((item, index) => {return (
-        <div>
-          <Box name={item.name} />
-        </div>
-      )})} */}
-
-
 
     </div>
 

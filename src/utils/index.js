@@ -1,4 +1,4 @@
-async function login(username, email, password);
+async function login(username, email, password, setter) {
 
 // The order of method, header, body is important and headers must include the content type
     try {
@@ -12,9 +12,11 @@ async function login(username, email, password);
             })
         })
         const data = await response.json();
-        console.log(data);
+        console.log(data.user);
+        setter(data.user);
     } catch (error) {
         console.log(error)
     }
+}
 
-    module.exports = {login};
+module.exports = {login};
